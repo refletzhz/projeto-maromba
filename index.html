@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meus treinos</title>
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("meus-treinos-tema") || "light";
+      } catch {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">Agenda semanal</p>
+          <h1>Meus treinos</h1>
+        </div>
+
+        <div class="header-actions">
+          <button class="theme-button" id="themeToggle" type="button" aria-label="Alternar tema" title="Alternar tema">
+            <span class="theme-mark" aria-hidden="true"></span>
+            <span class="theme-text">Escuro</span>
+          </button>
+
+          <button class="icon-button" id="clearAll" type="button" aria-label="Limpar semana" title="Limpar semana">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="week-grid" aria-label="Treinos da semana">
+        <article class="day-card" data-day="segunda">
+          <div class="day-topline">
+            <div>
+              <span class="day-number">01</span>
+              <h2>Segunda</h2>
+            </div>
+            <span class="status-dot" aria-hidden="true"></span>
+          </div>
+
+          <label class="field workout-field">
+            <span>Treino</span>
+            <textarea aria-label="Treino de segunda" placeholder="Ex: Perna + panturrilha"></textarea>
+          </label>
+
+          <div class="machines-block">
+            <div class="machines-topline">
+              <span>Maquinas</span>
+              <button class="add-button" type="button" data-add-machine aria-label="Adicionar maquina em segunda" title="Adicionar maquina">
+                <span aria-hidden="true">+</span>
+                <span>Adicionar</span>
+              </button>
+            </div>
+            <div class="machine-list" data-machine-list></div>
+          </div>
+        </article>
+
+        <article class="day-card" data-day="terca">
+          <div class="day-topline">
+            <div>
+              <span class="day-number">02</span>
+              <h2>Terca</h2>
+            </div>
+            <span class="status-dot" aria-hidden="true"></span>
+          </div>
+
+          <label class="field workout-field">
+            <span>Treino</span>
+            <textarea aria-label="Treino de terca" placeholder="Ex: Peito + triceps"></textarea>
+          </label>
+
+          <div class="machines-block">
+            <div class="machines-topline">
+              <span>Maquinas</span>
+              <button class="add-button" type="button" data-add-machine aria-label="Adicionar maquina em terca" title="Adicionar maquina">
+                <span aria-hidden="true">+</span>
+                <span>Adicionar</span>
+              </button>
+            </div>
+            <div class="machine-list" data-machine-list></div>
+          </div>
+        </article>
+
+        <article class="day-card" data-day="quarta">
+          <div class="day-topline">
+            <div>
+              <span class="day-number">03</span>
+              <h2>Quarta</h2>
+            </div>
+            <span class="status-dot" aria-hidden="true"></span>
+          </div>
+
+          <label class="field workout-field">
+            <span>Treino</span>
+            <textarea aria-label="Treino de quarta" placeholder="Ex: Costas + biceps"></textarea>
+          </label>
+
+          <div class="machines-block">
+            <div class="machines-topline">
+              <span>Maquinas</span>
+              <button class="add-button" type="button" data-add-machine aria-label="Adicionar maquina em quarta" title="Adicionar maquina">
+                <span aria-hidden="true">+</span>
+                <span>Adicionar</span>
+              </button>
+            </div>
+            <div class="machine-list" data-machine-list></div>
+          </div>
+        </article>
+
+        <article class="day-card" data-day="quinta">
+          <div class="day-topline">
+            <div>
+              <span class="day-number">04</span>
+              <h2>Quinta</h2>
+            </div>
+            <span class="status-dot" aria-hidden="true"></span>
+          </div>
+
+          <label class="field workout-field">
+            <span>Treino</span>
+            <textarea aria-label="Treino de quinta" placeholder="Ex: Ombro + abdomen"></textarea>
+          </label>
+
+          <div class="machines-block">
+            <div class="machines-topline">
+              <span>Maquinas</span>
+              <button class="add-button" type="button" data-add-machine aria-label="Adicionar maquina em quinta" title="Adicionar maquina">
+                <span aria-hidden="true">+</span>
+                <span>Adicionar</span>
+              </button>
+            </div>
+            <div class="machine-list" data-machine-list></div>
+          </div>
+        </article>
+
+        <article class="day-card" data-day="sexta">
+          <div class="day-topline">
+            <div>
+              <span class="day-number">05</span>
+              <h2>Sexta</h2>
+            </div>
+            <span class="status-dot" aria-hidden="true"></span>
+          </div>
+
+          <label class="field workout-field">
+            <span>Treino</span>
+            <textarea aria-label="Treino de sexta" placeholder="Ex: Posterior + gluteo"></textarea>
+          </label>
+
+          <div class="machines-block">
+            <div class="machines-topline">
+              <span>Maquinas</span>
+              <button class="add-button" type="button" data-add-machine aria-label="Adicionar maquina em sexta" title="Adicionar maquina">
+                <span aria-hidden="true">+</span>
+                <span>Adicionar</span>
+              </button>
+            </div>
+            <div class="machine-list" data-machine-list></div>
+          </div>
+        </article>
+
+        <article class="day-card" data-day="sabado">
+          <div class="day-topline">
+            <div>
+              <span class="day-number">06</span>
+              <h2>Sabado</h2>
+            </div>
+            <span class="status-dot" aria-hidden="true"></span>
+          </div>
+
+          <label class="field workout-field">
+            <span>Treino</span>
+            <textarea aria-label="Treino de sabado" placeholder="Ex: Cardio + mobilidade"></textarea>
+          </label>
+
+          <div class="machines-block">
+            <div class="machines-topline">
+              <span>Maquinas</span>
+              <button class="add-button" type="button" data-add-machine aria-label="Adicionar maquina em sabado" title="Adicionar maquina">
+                <span aria-hidden="true">+</span>
+                <span>Adicionar</span>
+              </button>
+            </div>
+            <div class="machine-list" data-machine-list></div>
+          </div>
+        </article>
+
+        <article class="day-card" data-day="domingo">
+          <div class="day-topline">
+            <div>
+              <span class="day-number">07</span>
+              <h2>Domingo</h2>
+            </div>
+            <span class="status-dot" aria-hidden="true"></span>
+          </div>
+
+          <label class="field workout-field">
+            <span>Treino</span>
+            <textarea aria-label="Treino de domingo" placeholder="Ex: Descanso"></textarea>
+          </label>
+
+          <div class="machines-block">
+            <div class="machines-topline">
+              <span>Maquinas</span>
+              <button class="add-button" type="button" data-add-machine aria-label="Adicionar maquina em domingo" title="Adicionar maquina">
+                <span aria-hidden="true">+</span>
+                <span>Adicionar</span>
+              </button>
+            </div>
+            <div class="machine-list" data-machine-list></div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <template id="machineTemplate">
+      <article class="machine-row">
+        <label class="field compact-field">
+          <span>Maquina</span>
+          <input class="machine-name" type="text" placeholder="Ex: Leg press" autocomplete="off" />
+        </label>
+
+        <label class="field compact-field">
+          <span>Carga</span>
+          <input class="machine-load" type="text" placeholder="Ex: 80 kg" autocomplete="off" />
+        </label>
+
+        <button class="row-button" type="button" aria-label="Remover maquina" title="Remover maquina">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>

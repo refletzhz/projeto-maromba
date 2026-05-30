@@ -22,6 +22,14 @@
         </div>
 
         <div class="header-actions">
+          <button class="utility-button" id="importConfigBtn" type="button" aria-label="Importar configuracao JSON" title="Importar configuracao JSON">
+            Importar JSON
+          </button>
+
+          <button class="utility-button" id="exportConfigBtn" type="button" aria-label="Exportar configuracao JSON" title="Exportar configuracao JSON">
+            Exportar JSON
+          </button>
+
           <button class="theme-button" id="themeToggle" type="button" aria-label="Alternar tema" title="Alternar tema">
             <span class="theme-mark" aria-hidden="true"></span>
             <span class="theme-text">Escuro</span>
@@ -217,6 +225,8 @@
         </article>
       </section>
     </main>
+
+    <input id="importConfigInput" type="file" accept=".json,application/json" hidden />
 
     <template id="machineTemplate">
       <article class="machine-row">

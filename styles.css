@@ -75,6 +75,8 @@ button {
 .header-actions {
   display: flex;
   flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 10px;
 }
 
@@ -103,6 +105,7 @@ h2 {
 }
 
 .theme-button,
+.utility-button,
 .icon-button,
 .add-button,
 .row-button {
@@ -119,10 +122,26 @@ h2 {
 }
 
 .theme-button:hover,
+.utility-button:hover,
 .icon-button:hover,
 .add-button:hover,
 .row-button:hover {
   transform: translateY(-1px);
+}
+
+.utility-button {
+  min-height: 46px;
+  background: var(--surface);
+  color: var(--muted);
+  padding: 0 12px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(22, 34, 45, 0.08);
+}
+
+.utility-button:hover {
+  border-color: rgba(37, 99, 235, 0.44);
+  color: var(--blue);
 }
 
 .theme-button {
@@ -389,8 +408,10 @@ textarea:focus {
 
   .header-actions {
     width: 100%;
+    justify-content: stretch;
   }
 
+  .utility-button,
   .theme-button {
     flex: 1;
   }

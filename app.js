@@ -23,8 +23,9 @@ const saveJson = (key, value) => {
 const hasMachineValue = (machine) => {
   const name = machine?.name ?? "";
   const load = machine?.load ?? "";
+  const reps = machine?.reps ?? "";
 
-  return name.trim().length > 0 || load.trim().length > 0;
+  return name.trim().length > 0 || load.trim().length > 0 || reps.trim().length > 0;
 };
 
 const hasAnyMachineValue = (machines) => {
@@ -49,7 +50,8 @@ const applyTheme = (theme) => {
 const getDayMachines = (card) => {
   return [...card.querySelectorAll(".machine-row")].map((row) => ({
     name: row.querySelector(".machine-name").value,
-    load: row.querySelector(".machine-load").value
+    load: row.querySelector(".machine-load").value,
+    reps: row.querySelector(".machine-reps").value
   }));
 };
 
@@ -77,18 +79,21 @@ const saveDayMachines = (card) => {
   setCardStatus(card);
 };
 
-const createMachineRow = (card, machine = { name: "", load: "" }) => {
+const createMachineRow = (card, machine = { name: "", load: "", reps: "" }) => {
   const machineList = card.querySelector("[data-machine-list]");
   const row = machineTemplate.content.firstElementChild.cloneNode(true);
   const nameInput = row.querySelector(".machine-name");
   const loadInput = row.querySelector(".machine-load");
+  const repsInput = row.querySelector(".machine-reps");
   const removeButton = row.querySelector(".row-button");
 
   nameInput.value = machine.name ?? "";
   loadInput.value = machine.load ?? "";
+  repsInput.value = machine.reps ?? "";
 
   nameInput.addEventListener("input", () => saveDayMachines(card));
   loadInput.addEventListener("input", () => saveDayMachines(card));
+  repsInput.addEventListener("input", () => saveDayMachines(card));
   removeButton.addEventListener("click", () => {
     row.remove();
     saveDayMachines(card);

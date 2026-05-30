@@ -335,7 +335,7 @@ textarea:focus {
 
 .machine-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(92px, 0.58fr) 38px;
+  grid-template-columns: minmax(0, 1fr) minmax(86px, 0.52fr) minmax(86px, 0.52fr) 38px;
   gap: 8px;
   align-items: end;
   border: 1px solid var(--line);
@@ -408,7 +408,7 @@ textarea:focus {
   }
 
   .machine-row {
-    grid-template-columns: 1fr 76px 38px;
+    grid-template-columns: 1fr 72px 72px 38px;
   }
 }
 
